@@ -1,15 +1,12 @@
 class  GenericPage
-	puts "loaded this page"
 	include RSpec::Matchers
+
 	attr_accessor :browser
 
 	def initialize(browser)
 		@browser = browser
 	end
 
-	def el(key)
-		@browser.element(css: EL(key))
-	end
 	def element_exists?(el)
 		@browser.element(el).exists?
 	end
